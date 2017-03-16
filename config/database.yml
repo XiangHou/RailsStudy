@@ -9,9 +9,17 @@ default: &default
   pool: 5
   timeout: 5000
 
+MariaDB: &Maria
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: 111111
+  host: 127.0.0.1
+  port: 3306
+
 development:
-  <<: *default
-  database: db/development.sqlite3
+  <<: *Maria
+  database: rails_study
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
