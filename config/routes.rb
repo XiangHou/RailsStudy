@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :articles
+
   get 'welcome/index'
   root 'welcome#index'
 
