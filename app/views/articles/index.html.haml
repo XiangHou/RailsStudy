@@ -1,0 +1,16 @@
+= render :partial => 'articles/header'
+= render :partial => 'application/header'
+= render :partial => 'header'
+
+%h1 Listing articles
+%table
+  %tr
+    %th Title
+    %th Text
+
+  - @articles.each do |article|
+    %tr
+      %td= article.title
+      %td= article.text
+      %td= link_to 'Show'
+      %td= link_to 'Edit', edit_articles_path(article)

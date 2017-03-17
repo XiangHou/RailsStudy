@@ -9,6 +9,8 @@
     <tr>
       <td><%= article.title %></td>
       <td><%= article.text %></td>
+      <td><%= link_to 'Show'  %></td>
+      <td><%= link_to 'Edit', edit_articles_path(article) %></td>
     </tr>
   <% end %>
 </table>
