@@ -7,6 +7,10 @@ gem 'rails', '4.2.5'
 gem 'sqlite3'
 # Use MariaDB as the database for Active Record
 gem 'mysql2'
+# Add comments for model after db:migrate
+gem 'annotate', '~> 2.6.0'
+# ?????
+gem 'migration_comments'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -28,6 +32,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml', '~> 4.0.0'
 # Automatic recognition about request of between mobile and pc
 gem 'mobylette', '~> 3.5.0'
+# Passenger GEM for server application (Nginx)
+gem 'passenger', '5.1.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -49,5 +55,13 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # RubyMine debug
+  gem 'ruby-debug-ide'
+  gem 'debase'
+
+  # Error output
+  gem 'better_errors'
+  gem "binding_of_caller"
 end
 
