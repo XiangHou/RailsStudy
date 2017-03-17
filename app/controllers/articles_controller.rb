@@ -15,9 +15,21 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
 
-    @article.save
+    if @article.save
+      redirect_to :action => 'show', :id => @article
+    else
+      render :action => 'new'
+    end
+  end
 
-    redirect_to :action => 'show', :id => @article
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update(article_params)
+      redirect_to :action => 'show', :id => @article
+    else
+      render :action => 'edit'
+    end
   end
 
   private

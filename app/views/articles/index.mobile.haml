@@ -1,0 +1,14 @@
+= render :partial => 'application/header'
+
+%h1 List Articles (Mobile Ver.)
+%table
+  %tr
+    %th Title
+    %th Text
+
+  - @articles.each do |article|
+    %tr
+      %td= article.title
+      %td= article.text
+      %td= link_to 'Show'
+      %td= link_to 'Edit', edit_articles_path(article)
