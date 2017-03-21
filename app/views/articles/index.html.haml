@@ -12,5 +12,7 @@
     %tr
       %td= article.title
       %td= article.text
-      %td= link_to 'Show'
-      %td= link_to 'Edit', edit_articles_path(article)
+      %td= link_to 'Show', {:controller => 'articles', :action => 'show', :id => article}
+      %td= link_to 'Edit', {:controller => 'articles', :action => 'edit', :id => article}
+
+%div= image_tag asset_url('lishu')
