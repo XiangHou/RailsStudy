@@ -35,6 +35,10 @@ gem 'mobylette', '~> 3.5.0'
 # Passenger GEM for server application (Nginx)
 gem 'passenger', '5.1.2'
 
+# Twitter plugin
+#gem 'twitter'
+gem 'omniauth-twitter'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
