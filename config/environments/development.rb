@@ -41,4 +41,7 @@ Rails.application.configure do
 
   # manifest file path
   config.assets.manifest = "config/dev.manifest.json"
+
+  # Asset server for raising performance
+  config.action_controller.asset_host = "http://127.0.0.1:88"
 end
