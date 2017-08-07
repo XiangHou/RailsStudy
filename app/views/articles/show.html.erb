@@ -8,4 +8,16 @@
   <%= @article.text %>
 </p>
 
+<p>
+  <strong>Content:</strong>
+  <%
+    @article.contents.each {|content|
+  %>
+
+      <br /><%= content.display_text %>
+  <%
+    }
+  %>
+</p>
+
 <%= link_to 'Back', articles_path %>
