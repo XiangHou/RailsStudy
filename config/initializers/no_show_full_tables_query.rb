@@ -62,4 +62,32 @@ module ActiveRecord
       end
     end
   end
-end    
+end
+
+module Arel
+  module Visitors
+    class ToSql
+      def column_for attr
+        return unless attr
+        name    = attr.name.to_s
+        table   = attr.relation.table_name
+
+        return nil unless table_exists? table
+
+        # column_cache(table)[name]
+      end
+    end
+  end
+end
+
+module ActiveRecord
+  module Persistence
+    module ClassMethods
+      def instantiate(attributes, column_types = {})
+        klass = discriminate_class_for_record(attributes)
+        attributes = klass.attributes_builder.build_from_database(attributes, column_types)
+        klass.allocate.init_with('attributes' => attributes, 'new_record' => false)
+      end
+    end
+  end
+end
